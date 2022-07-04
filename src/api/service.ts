@@ -10,3 +10,9 @@ export const fetchRandMusic = () => {
 // export const fetchRandMusic = () => {
 //   return request.get(`${URL.musicUrl}/rand.music?sort=热歌榜&format=json`)
 // }
+
+// 获取歌手列表
+
+export const fetchArtist = () => {
+  return request.get(`${URL.neteaseUrl}/toplist/artist`)
+}

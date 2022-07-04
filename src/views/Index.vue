@@ -16,8 +16,8 @@
   height: 100vh;
   padding-bottom: 50px;
   box-sizing: border-box;
-  background-color: aquamarine;
   overflow-y: auto;
   overflow-x: hidden;
+  background: #F8F9FC ;
 }
 </style>

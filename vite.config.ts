@@ -10,7 +10,13 @@ export default defineConfig({
     vue(),
     vueJsx({}),
     styleImport({
-      resolves: [VantResolve()]
+      resolves: [VantResolve()],
+      libs:[
+        {libraryName:'vant',
+        esModule:true,
+        resolveStyle:name=>`../es/${name}/style`
+        }
+      ]
     }),
     VueSetupExtend()
   ],
@@ -19,6 +25,8 @@ export default defineConfig({
       '@': resolve(__dirname, 'src')
     }
   },
+  base:'/',
+  root: process.cwd(),
   css: {
     preprocessorOptions: {
       less: {

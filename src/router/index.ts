@@ -1,44 +1,45 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import {useAppStoreWithOut} from '@/stores/app';
+import { defineAsyncComponent } from 'vue';
 const useApp = useAppStoreWithOut()
 console.log(useApp);
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect:'/dashBoard',
-    component: () => import('@/views/Index.vue'),
+    component: defineAsyncComponent(() => import('@/views/Index.vue')),
     children:[
       {
         path:'/dashBoard',
         name:'Dashboard',
-        component: () => import('@/views/dashBoard.vue'),
+        component: defineAsyncComponent(() => import('@/views/dashBoard.vue')),
       },
       {
         path:'/todo',
         name:'Todo',
-        component: () => import('@/views/todo.vue'),
+        component: defineAsyncComponent(() => import('@/views/todo.vue')),
       },
       {
         path:'/application',
         name:'Application',
-        component: () => import('@/views/application.vue'),
+        component: defineAsyncComponent(() => import('@/views/application.vue')),
       },
       {
         path:'/home',
         name:'Home',
-        component: () => import('@/views/home.vue'),
+        component: defineAsyncComponent(() => import('@/views/home.vue')),
       },
     ]
   },
   {
     path: '/player',
     name: 'Player',
-    component: () => import('@/views/Home.vue')
+    component: defineAsyncComponent(() => import('@/views/Home.vue'))
   },
   {
     path: '/list',
     name: 'List',
-    component: () => import('@/views/List.vue'),
+    component: defineAsyncComponent(() => import('@/views/List.vue')),
     meta: {
       keepAlive: true
     }
@@ -46,11 +47,27 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/detail',
     name: 'Detail',
-    component: () => import('@/views/Detail.vue'),
+    component: defineAsyncComponent(() => import('@/views/Detail.vue')),
     meta: {
       keepAlive: true
     }
-  }
+  },
+  {
+    path: '/cropper',
+    name: 'Cropper',
+    component: defineAsyncComponent(() => import('@/views/pages/cropper/index.vue')),
+    meta: {
+      keepAlive: false
+    }
+  },
+  {
+    path: '/chart',
+    name: 'Chart',
+    component: defineAsyncComponent(() => import('@/views/pages/charts/index.vue')),
+    meta: {
+      keepAlive: false
+    }
+  },
 ]
 
 const router = createRouter({

@@ -18,7 +18,7 @@ export const HomeHooks = () => {
 
   // 查询随机音乐信息
   const fetchMusicInfo = async () => {
-    const { data } = await fetchRandMusic()
+    const  data  = await fetchRandMusic()
     indexRec.loading = false
     indexRec.noData = data.code !== 1
     indexRec.musicData = data.data

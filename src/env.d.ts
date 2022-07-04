@@ -6,6 +6,8 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+declare module 'vue-cropper-h5';
+declare module 'stack-keep-alive';
 
 // 不关心外部库的类型，并且希望将所有没有类型的库导入为any
 declare module '*.jsx'

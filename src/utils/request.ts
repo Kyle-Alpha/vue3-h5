@@ -28,7 +28,7 @@ request.interceptors.request.use((config) => {
 
 // response interceptor
 request.interceptors.response.use((response) => {
-  return response
+  return response.data
 }, errorHandler)
 
 export default request
