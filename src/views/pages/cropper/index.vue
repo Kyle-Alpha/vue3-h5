@@ -1,5 +1,5 @@
 <template>
-<div class="flex-y-center">
+<div class="flex-y-center page-container">
   <div class="cropper">
     <H5Cropper :option="{}"  @getFile="getFile"/>
   </div>

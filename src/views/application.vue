@@ -30,6 +30,12 @@ const state = reactive({
       code:'chart',
       path:'/chart'
     },
+    {
+      icon:'http://p1.music.126.net/ZyUjc7K_GDpD8MO1-GQkmA==/109951166952706664.jpg?param=150y150',
+      name:'我的列表',
+      code:'list',
+      path:'/list'
+    },
   ]
 })
 </script>

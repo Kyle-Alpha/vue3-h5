@@ -1,71 +1,81 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import {useAppStoreWithOut} from '@/stores/app';
-import { defineAsyncComponent } from 'vue';
 const useApp = useAppStoreWithOut()
 console.log(useApp);
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect:'/dashBoard',
-    component: defineAsyncComponent(() => import('@/views/Index.vue')),
+    component: () => import('@/views/Index.vue'),
     children:[
       {
         path:'/dashBoard',
         name:'Dashboard',
-        component: defineAsyncComponent(() => import('@/views/dashBoard.vue')),
+        component: () => import('@/views/dashBoard.vue'),
+        meta:{
+          level:1
+        }
       },
       {
         path:'/todo',
         name:'Todo',
-        component: defineAsyncComponent(() => import('@/views/todo.vue')),
+        component: () => import('@/views/todo.vue'),
+        meta:{
+          level:1
+        }
       },
       {
         path:'/application',
         name:'Application',
-        component: defineAsyncComponent(() => import('@/views/application.vue')),
+        component: () => import('@/views/application.vue'),
+        meta:{
+          level:1
+        }
       },
       {
         path:'/home',
         name:'Home',
-        component: defineAsyncComponent(() => import('@/views/home.vue')),
+        component: () => import('@/views/home.vue'),
+        meta:{
+          level:1
+        }
       },
     ]
   },
   {
-    path: '/player',
-    name: 'Player',
-    component: defineAsyncComponent(() => import('@/views/Home.vue'))
-  },
-  {
     path: '/list',
     name: 'List',
-    component: defineAsyncComponent(() => import('@/views/List.vue')),
+    component: () => import('@/views/List.vue'),
     meta: {
-      keepAlive: true
+      keepAlive: true,
+      level:2
     }
   },
   {
     path: '/detail',
     name: 'Detail',
-    component: defineAsyncComponent(() => import('@/views/Detail.vue')),
+    component: () => import('@/views/Detail.vue'),
     meta: {
-      keepAlive: true
+      keepAlive: true,
+      level:3
     }
   },
   {
     path: '/cropper',
     name: 'Cropper',
-    component: defineAsyncComponent(() => import('@/views/pages/cropper/index.vue')),
+    component: () => import('@/views/pages/cropper/index.vue'),
     meta: {
-      keepAlive: false
+      keepAlive: false,
+      level:2
     }
   },
   {
     path: '/chart',
     name: 'Chart',
-    component: defineAsyncComponent(() => import('@/views/pages/charts/index.vue')),
+    component: () => import('@/views/pages/charts/index.vue'),
     meta: {
-      keepAlive: false
+      keepAlive: false,
+      level:2
     }
   },
 ]
@@ -74,12 +84,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
-router.beforeEach((to, from, next) => {
-  console.log(from, to);
+router.beforeEach((to:any, from:any, next) => {
   if(to.meta.keepAlive){
     useApp.addCacheView(to.name as string)
-    // console.log(to.meta.fromViews);
-    
+  }
+  if(from.meta.keepAlive&&(from.meta.level>to.meta.level)){
+    useApp.removeCacheView(from.name as string)
   }
   next()
 })

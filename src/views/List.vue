@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-container">
     <input type="text" v-model="text">
     <van-button @click="toDetail">去详情页</van-button>
   </div>

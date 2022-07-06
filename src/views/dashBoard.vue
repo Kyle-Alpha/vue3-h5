@@ -1,9 +1,6 @@
 <template>
 <div class="page-container">
-  <div class="item" v-for="(item,index) in artists" :key="index">
-    <img :src="item.picUrl" />
-    <!-- <span>{{item.name}}</span> -->
-  </div>
+  <input type="text" v-model="keepText">
 </div>
 </template>
 
@@ -15,14 +12,8 @@ const router = useRouter()
 const toPlayer = () => {
   router.push('/player')
 }
-const artists = ref([])
-const getArtist = async ()=>{
+const keepText = ref('')
 
-  let res = await fetchArtist()
-  artists.value = res.list.artists
-console.log(res,'>>>')
-}
-getArtist()
 </script>
 <style scoped lang="less"> 
 .page-container{
