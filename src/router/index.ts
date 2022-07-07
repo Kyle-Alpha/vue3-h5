@@ -6,7 +6,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect:'/dashBoard',
-    component: () => import('@/views/Index.vue'),
+    component: () => import('@/views/index.vue'),
     children:[
       {
         path:'/dashBoard',
@@ -45,7 +45,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/list',
     name: 'List',
-    component: () => import('@/views/List.vue'),
+    component: () => import('@/views/pages/list/list.vue'),
     meta: {
       keepAlive: true,
       level:2
@@ -54,7 +54,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/detail',
     name: 'Detail',
-    component: () => import('@/views/Detail.vue'),
+    component: () => import('@/views/pages/list/detail.vue'),
     meta: {
       keepAlive: true,
       level:3
