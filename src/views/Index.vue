@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts"></script>
-<style scoped>
+<style scoped lang="less">
 .tabbar-container{
   height: 100vh;
   padding-bottom: 50px;

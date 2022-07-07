@@ -82,7 +82,15 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  // scrollBehavior(to, from, savedPosition) {
+  //   console.log(savedPosition)
+	// 	if (savedPosition) {
+	// 		return savedPosition;
+	// 	} else {
+	// 		return { top: 0 };
+	// 	}
+	// },
 })
 router.beforeEach((to:any, from:any, next) => {
   if(to.meta.keepAlive){

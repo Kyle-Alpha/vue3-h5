@@ -1,5 +1,4 @@
 <template>
-  <div class="page-container">
     <div class="application">
       <div class="app-item" v-for="item in state.application" :key="item.code" @click="router.push(item.path)">
         <img
@@ -9,7 +8,6 @@
         <div class="name">{{item.name}}</div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -40,7 +38,6 @@ const state = reactive({
 })
 </script>
 <style scoped lang="less">
-.page-container {
   .application {
     padding: 10px;
     display: flex;
@@ -55,5 +52,4 @@ const state = reactive({
       }
     }
   }
-}
 </style>

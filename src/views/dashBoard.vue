@@ -1,5 +1,5 @@
 <template>
-<div class="page-container">
+<div >
   <input type="text" v-model="keepText">
 </div>
 </template>
@@ -16,18 +16,4 @@ const keepText = ref('')
 
 </script>
 <style scoped lang="less"> 
-.page-container{
-  display:flex;
-  flex-wrap:wrap;
-  .item{
-    display:flex;
-    margin:13px;
-    flex-direction:column;
-    img{
-      width:48px;
-      height:48px;
-      border-radius:8px;
-    }
-  }
-}
 </style>

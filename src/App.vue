@@ -48,28 +48,27 @@ router.beforeEach((to:any,from:any,next ) => {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
 }
-.slide-right-enter-active, .slide-right-leave-active, .slide-left-enter-active, .slide-left-leave-active {
-      will-change: transform;
-      transition: all 250ms ;
-    }
+@distanceX: 100%;
 
-    .slide-right-enter {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  transition: all 0.35s cubic-bezier(0.55, 0, 0.1, 1);
+}
 
-    .slide-right-leave-active {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(@distanceX, 0);
 
-    .slide-left-enter {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
-
-    .slide-left-leave-active {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
+}
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-@distanceX, 0);
+}
 </style>
