@@ -78,19 +78,20 @@ const routes: Array<RouteRecordRaw> = [
       level:2
     }
   },
+  {
+    path: '/player',
+    name: 'Player',
+    component: () => import('@/views/pages/player/index.vue'),
+    meta: {
+      keepAlive: true,
+      level:2
+    }
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  // scrollBehavior(to, from, savedPosition) {
-  //   console.log(savedPosition)
-	// 	if (savedPosition) {
-	// 		return savedPosition;
-	// 	} else {
-	// 		return { top: 0 };
-	// 	}
-	// },
 })
 router.beforeEach((to:any, from:any, next) => {
   if(to.meta.keepAlive){
