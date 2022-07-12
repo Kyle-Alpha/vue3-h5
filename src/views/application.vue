@@ -45,12 +45,14 @@ const state = reactive({
 </script>
 <style scoped lang="less">
   .application {
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     .app-item{
       margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       img{
         width: 48px;
         height: 48px;

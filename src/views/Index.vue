@@ -1,5 +1,5 @@
 <template>
-<div class="tabbar-container">
+<div class="tabbar-container p-4">
    <router-view v-slot="{ Component }">
       <keep-alive >
         <component :is="Component"  />

@@ -40,7 +40,7 @@ watch(
 )
 </script>
 <template>
-  <div>
+  <div class="flex-center">
     <audio ref="audio" :src="props.url" controls>您的浏览器不支持 audio 元素。</audio>
   </div>
 </template>

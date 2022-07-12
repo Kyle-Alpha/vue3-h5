@@ -1,10 +1,10 @@
 <template>
   <page-wrapper>
     <template #header>
-      <div class="custom-header"></div>
+      <div class="custom-header bg-blue-400  text-lg flex-center">头部</div>
     </template>
     <template #footer>
-      <div class="custom-footer"></div>
+      <div class="custom-footer bg-blue-500 text-center flex-center">底部</div>
     </template>
 
     <van-list
@@ -14,7 +14,7 @@
       finished-text="没有更多了"
       @load="onLoad"
     >
-      <van-cell v-for="item in list" :key="item" :title="item" @click="toDetail" />
+      <van-cell  v-for="item in list" :key="item" :title="item" @click="toDetail" />
     </van-list>
   </page-wrapper>
 </template>
@@ -64,6 +64,5 @@ const onLoad = () => {
 <style scoped>
 .custom-header,.custom-footer {
   height: 56px;
-  background-color: antiquewhite;
 }
 </style>
