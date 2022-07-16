@@ -48,7 +48,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/pages/list/list.vue'),
     meta: {
       keepAlive: true,
-      level:2
+      level:2,
+      title:'列表页'
     }
   },
   {
@@ -87,6 +88,16 @@ const routes: Array<RouteRecordRaw> = [
       level:2
     }
   },
+  {
+    path: '/form',
+    name: 'Form',
+    component: () => import('@/views/pages/form/index.vue'),
+    meta: {
+      keepAlive: true,
+      level:2,
+      title:'表单页'
+    }
+  }
 ]
 
 const router = createRouter({

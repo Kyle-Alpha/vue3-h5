@@ -1,12 +1,13 @@
 import { createApp } from 'vue'
-import '@/style/tailWind.css';
+
 import App from './App.vue'
 import router from './router/index'
 import {store} from './stores/index';
-import { Button, Loading, Empty,Tabbar, TabbarItem,List,Cell, CellGroup  } from 'vant'
-import pageWrapper from '@/components/pageWrapper.vue';
+import {registerGlobComp} from '@/components/registerGlobComp';
+import '@/style/reset.less';
+import '@/style/tailWind.css';
+
 const app = createApp(App)
 app.use(store).use(router)
-app.component(pageWrapper.name,pageWrapper)
-app.use(Button).use(Loading).use(Empty).use(Tabbar).use(TabbarItem).use(List).use(CellGroup).use(Cell)
+registerGlobComp(app)
 app.mount('#app')

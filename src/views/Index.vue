@@ -22,6 +22,6 @@
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #F8F9FC ;
+  background: @page-bg-color;
 }
 </style>

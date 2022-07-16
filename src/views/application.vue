@@ -1,63 +1,74 @@
 <template>
-    <div class="application">
-      <div class="app-item" v-for="item in state.application" :key="item.code" @click="router.push(item.path)">
-        <img
-          src="http://p1.music.126.net/ZyUjc7K_GDpD8MO1-GQkmA==/109951166952706664.jpg?param=150y150"
-          alt=""
-        />
-        <div class="name">{{item.name}}</div>
-      </div>
+  <div class="application">
+    <div
+      class="app-item"
+      v-for="item in state.application"
+      :key="item.code"
+      @click="router.push(item.path)"
+    >
+      <van-icon :name="item.icon" size="32px" />
+      <div class="name">{{ item.name }}</div>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { reactive, ref, onMounted } from 'vue'
-import {useRouter} from 'vue-router';
+import { useRouter } from 'vue-router'
 const router = useRouter()
 const state = reactive({
-  application:[
+  application: [
     {
-      icon:'http://p1.music.126.net/ZyUjc7K_GDpD8MO1-GQkmA==/109951166952706664.jpg?param=150y150',
-      name:'裁剪工具',
-      code:'cropper',
-      path:'/cropper'
+      icon: 'photo',
+      name: '裁剪工具',
+      code: 'cropper',
+      path: '/cropper'
     },
     {
-      icon:'http://p1.music.126.net/ZyUjc7K_GDpD8MO1-GQkmA==/109951166952706664.jpg?param=150y150',
-      name:'图表',
-      code:'chart',
-      path:'/chart'
+      icon: 'bar-chart-o',
+      name: '图表',
+      code: 'chart',
+      path: '/chart'
     },
     {
-      icon:'http://p1.music.126.net/ZyUjc7K_GDpD8MO1-GQkmA==/109951166952706664.jpg?param=150y150',
-      name:'我的列表',
-      code:'list',
-      path:'/list'
+      icon: 'wap-nav',
+      name: '我的列表',
+      code: 'list',
+      path: '/list'
     },
     {
-      icon:'http://p1.music.126.net/ZyUjc7K_GDpD8MO1-GQkmA==/109951166952706664.jpg?param=150y150',
-      name:'播放器',
-      code:'player',
-      path:'/player'
+      icon: 'audio',
+      name: '播放器',
+      code: 'player',
+      path: '/player'
+    },
+    {
+      icon: 'records',
+      name: '表单',
+      code: 'form',
+      path: '/form'
     },
   ]
 })
 </script>
 <style scoped lang="less">
-  .application {
+.application {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: @card-bg-color;
+  padding: 6px;
+  border-radius: 8px;
+  .app-item {
+    width: 20%;
+    padding: 4px;
+    font-size: 14px;
+    // margin: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    .app-item{
-      margin: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img{
-        width: 48px;
-        height: 48px;
-        margin-bottom: 10px;
-      }
+    flex-direction: column;
+    align-items: center;
+    .name{
+      margin-top: 6px;
     }
   }
+}
 </style>

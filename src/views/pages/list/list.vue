@@ -1,12 +1,5 @@
 <template>
   <page-wrapper>
-    <template #header>
-      <div class="custom-header bg-blue-400  text-lg flex-center">头部</div>
-    </template>
-    <template #footer>
-      <div class="custom-footer bg-blue-500 text-center flex-center">底部</div>
-    </template>
-
     <van-list
       ref="listRef"
       v-model:loading="loading"
@@ -37,7 +30,7 @@ const toDetail = () => {
   console.log(text.value)
   router.push('/Detail')
 }
-const list = ref([])
+const list = ref<Array<number>>([])
 const loading = ref(false)
 const finished = ref(false)
 for (let i = 0; i < 20; i++) {
@@ -62,7 +55,4 @@ const onLoad = () => {
 }
 </script>
 <style scoped>
-.custom-header,.custom-footer {
-  height: 56px;
-}
 </style>

@@ -1,6 +1,6 @@
 <template>
 <div >
-  <input type="text" v-model="keepText">
+<h1>首页</h1>
 </div>
 </template>
 

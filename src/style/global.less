@@ -1,8 +1,62 @@
-@theme-color: #ff976a;
+@media (prefers-color-scheme: light) {
+  :root {
+    --page-bg-color: #f8f9fc;
+    --text-base-color: #323233;
+    --liner-yellow-color: #ff976a;
+    --van-tabbar-item-active-color:#d13b37;
+    --card-bg-color: #fff;
+    //===
+    --van-nav-bar-icon-color:var(--text-base-color);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg-color: #252525;
+    --text-base-color: #b1b1b1;
+    --card-bg-color: #1c1c1e;
+    --liner-yellow-color: #ff976a;
+    --van-text-color: #f5f5f5;
+    // --van-text-color-2: #707070;
+    // --van-text-color-3: #4d4d4d;
+    // --van-border-color: #3a3a3c;
+    // --van-active-color: #3a3a3c;
+    // --van-background: #000;
+    // --van-background-2: #1c1c1e;
+    // --van-background-3: #37363b;
+    // ==== 
+    --van-tabbar-background-color:var(--page-bg-color);
+    --van-tabbar-item-active-background-color:var(--page-bg-color);
+    --van-tabbar-item-text-color:var(--text-base-color);
+    --van-tabbar-item-active-color:#d13b37;
+    //=====
+    --van-nav-bar-background-color:var(--page-bg-color);
+    --van-nav-bar-icon-color:var(--text-base-color);
+    --van-nav-bar-text-color:var(--text-base-color);
+    --van-nav-bar-title-text-color:var(--text-base-color);
+    // =====
+    --van-border-color:#35363a;
+    // ===cell===
+    --van-cell-title-color:var(--text-base-color);
+    --van-cell-background-color:var(--card-bg-color);
+    --van-cell-text-color:var(--text-base-color);
+    // ===field===
+    --van-field-input-text-color:var(--van-text-color);
+  }
+}
+@theme-color: var(--liner-yellow-color);
+@page-bg-color: var(--page-bg-color);
+@text-base-color: var(--text-base-color);
+@card-bg-color: var(--card-bg-color);
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+}
 body {
-  color: #323233;
+  background-color: @page-bg-color;
+  color: @text-base-color;
   font-size: 14px;
 }
-.page-container{
+.page-container {
   height: 100vh;
+  background-color: @page-bg-color;
 }
