@@ -48,6 +48,12 @@ const state = reactive({
       code: 'form',
       path: '/form'
     },
+    {
+      icon: 'new-o',
+      name: '画布',
+      code: 'canvas',
+      path: '/canvas'
+    },
   ]
 })
 </script>
@@ -62,7 +68,7 @@ const state = reactive({
     width: 20%;
     padding: 4px;
     font-size: 14px;
-    // margin: 10px;
+    margin-bottom: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;

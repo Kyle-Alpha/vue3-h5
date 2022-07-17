@@ -3,6 +3,7 @@
     <header class="fixed-header">
       <slot name="header">
         <van-nav-bar
+          v-if="isShowNavBar"
           left-arrow
           @click-left="onClickLeft"
           :title="pageTitle||(route.meta.title as string)"
@@ -27,6 +28,10 @@ defineProps({
   pageTitle: {
     type: String,
     default: ''
+  },
+  isShowNavBar:{
+    type:Boolean,
+    default:false
   }
 })
 const scrollHeight = ref<number>(0)

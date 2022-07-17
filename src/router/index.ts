@@ -75,7 +75,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Chart',
     component: () => import('@/views/pages/charts/index.vue'),
     meta: {
-      keepAlive: false,
+      keepAlive: true,
       level:2
     }
   },
@@ -97,7 +97,17 @@ const routes: Array<RouteRecordRaw> = [
       level:2,
       title:'表单页'
     }
-  }
+  },
+  {
+    path: '/canvas',
+    name: 'Canvas',
+    component: () => import('@/views/pages/canvas/index.vue'),
+    meta: {
+      keepAlive: true,
+      level:2,
+      title:'画布'
+    }
+  },
 ]
 
 const router = createRouter({
