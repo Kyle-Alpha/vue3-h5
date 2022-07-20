@@ -41,7 +41,7 @@ export const fillRoundRect = (
   width: number,
   height: number,
   radius: number,
-  fillColor: string | Array<[number,string]> = '#fff'
+  fillColor: string | Array<[number, string]> = '#fff'
 ) => {
   //圆的直径必然要小于矩形的宽高
   if (2 * radius > width || 2 * radius > height) {
@@ -95,7 +95,7 @@ export const drawRadiusImg = (
   ctx.arcTo(x, y + h, x, y, r)
   ctx.arcTo(x, y, x + w, y, r)
   ctx.closePath()
-  ctx.strokeStyle = '#FFFFFF' // 设置绘制圆形边框的颜色
+  ctx.strokeStyle = '#ffffff' // 设置绘制圆形边框的颜色
   ctx.stroke()
   ctx.clip()
   ctx.drawImage(img, x, y, w, h)
@@ -134,7 +134,7 @@ export const drawTextOverflow = (
   text: string,
   maxWidth: number,
   maxRow: number,
-  font: string,
+  font: any,
   color: string,
   lineHeight: number,
   x: number,
@@ -144,16 +144,16 @@ export const drawTextOverflow = (
   let row = []
   text = text.replace(/[\r\n]/g, '') // 去除回车换行符
   let arr = text.split('')
-
-  ctx.font = font // 注意：一定要先设置字号，否则会出现文本变形
+  const { fontSize, fontWeight, fontFamily } = font
+  ctx.font = `normal normal ${fontWeight} ${fontSize}px ${fontFamily}` // 注意：一定要先设置字号，否则会出现文本变形
   ctx.fillStyle = color
 
-  if (ctx.measureText(text).width <= maxWidth) {
+  if (ctx.measureText(text).width < maxWidth) {
     row.push(text)
   } else {
     for (let i = 0; i < arr.length; i++) {
       // 超出最大行数且字符有剩余，添加...
-      if (row.length == maxRow && i < arr.length - 1) {
+      if (row.length == maxRow && i <= arr.length - 1) {
         row[row.length - 1] += '...'
         break
       }
