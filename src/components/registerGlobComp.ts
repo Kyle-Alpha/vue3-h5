@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import { Button, Loading, Empty, Tabbar, TabbarItem, List, Cell, CellGroup,NavBar,Icon,Field } from 'vant'
+import { Button, Loading, Empty, Tabbar, TabbarItem, List, Cell, CellGroup,NavBar,Icon,Field,Search } from 'vant'
 import pageWrapper from '@/components/pageWrapper.vue'
 
 export function registerGlobComp(app: App) {
@@ -16,4 +16,5 @@ export function registerGlobComp(app: App) {
     .use(NavBar)
     .use(Icon)
     .use(Field)
+    .use(Search)
 }

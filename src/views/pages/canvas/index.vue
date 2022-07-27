@@ -1,7 +1,7 @@
 <template>
-  <div class="page-container">
+  <div class="page-container flex-center">
     <poster :options="options" @getBase64="getBase64" />
-    <img :src="imgUrl" alt="" />
+    <img :src="imgUrl" class="example" alt="" />
   </div>
 </template>
 
@@ -98,7 +98,7 @@ const options = reactive({
     },
     {
       type: 'text',
-      text: '111111122223333456',
+      text: '2222222222222232',
       x: 24,
       y: 429,
       maxWidth: 150,
@@ -130,4 +130,8 @@ const getBase64 = (base64: string) => {
 }
 
 </script>
-<style scoped></style>
+<style scoped>
+.example{
+  width: 200px;
+}
+</style>

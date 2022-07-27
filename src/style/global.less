@@ -2,18 +2,20 @@
   :root {
     --page-bg-color: #f8f9fc;
     --text-base-color: #323233;
+    --primary: #d13b37;
     --liner-yellow-color: #ff976a;
-    --van-tabbar-item-active-color:#d13b37;
+    --van-tabbar-item-active-color:var(--primary);
     --card-bg-color: #fff;
     //===
-    --van-nav-bar-icon-color:var(--text-base-color);
+    --van-nav-bar-icon-color:var(--primary);
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --page-bg-color: #252525;
     --text-base-color: #b1b1b1;
-    --card-bg-color: #1c1c1e;
+    --card-bg-color: #1c1c1e;    
+    --primary: #d13b37;
     --liner-yellow-color: #ff976a;
     --van-text-color: #f5f5f5;
     // --van-text-color-2: #707070;
@@ -27,7 +29,7 @@
     --van-tabbar-background-color:var(--page-bg-color);
     --van-tabbar-item-active-background-color:var(--page-bg-color);
     --van-tabbar-item-text-color:var(--text-base-color);
-    --van-tabbar-item-active-color:#d13b37;
+    --van-tabbar-item-active-color:var(--primary);
     //=====
     --van-nav-bar-background-color:var(--page-bg-color);
     --van-nav-bar-icon-color:var(--text-base-color);
@@ -42,8 +44,12 @@
     --van-cell-text-color:var(--text-base-color);
     // ===field===
     --van-field-input-text-color:var(--van-text-color);
+    // ===search===
+    --van-search-background-color:var(--page-bg-color);
+    --van-search-content-background-color:var(--card-bg-color);
   }
 }
+@primary-color: var(--primary);
 @theme-color: var(--liner-yellow-color);
 @page-bg-color: var(--page-bg-color);
 @text-base-color: var(--text-base-color);
@@ -56,6 +62,9 @@ body {
   background-color: @page-bg-color;
   color: @text-base-color;
   font-size: 14px;
+}
+em{
+  color: @primary-color;
 }
 .page-container {
   height: 100vh;
